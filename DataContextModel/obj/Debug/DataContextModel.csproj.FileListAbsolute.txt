@@ -1,0 +1,11 @@
+D:\Projects\MarketingApp\DataContextModel\bin\Debug\DataContextModel.dll.config
+D:\Projects\MarketingApp\DataContextModel\bin\Debug\DataContextModel.dll
+D:\Projects\MarketingApp\DataContextModel\bin\Debug\DataContextModel.pdb
+D:\Projects\MarketingApp\DataContextModel\bin\Debug\EntityFramework.dll
+D:\Projects\MarketingApp\DataContextModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\MarketingApp\DataContextModel\bin\Debug\EntityFramework.xml
+D:\Projects\MarketingApp\DataContextModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\MarketingApp\DataContextModel\bin\Debug\ru\EntityFramework.resources.dll
+D:\Projects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.csprojResolveAssemblyReference.cache
+D:\Projects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.dll
+D:\Projects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.pdb
