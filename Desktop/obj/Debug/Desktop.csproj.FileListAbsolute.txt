@@ -1,0 +1,8 @@
+D:\Projects\MarketingApp\Desktop\bin\Debug\Desktop.exe.config
+D:\Projects\MarketingApp\Desktop\bin\Debug\Desktop.exe
+D:\Projects\MarketingApp\Desktop\bin\Debug\Desktop.pdb
+D:\Projects\MarketingApp\Desktop\obj\Debug\Desktop.csprojResolveAssemblyReference.cache
+D:\Projects\MarketingApp\Desktop\obj\Debug\Desktop.Properties.Resources.resources
+D:\Projects\MarketingApp\Desktop\obj\Debug\Desktop.csproj.GenerateResource.Cache
+D:\Projects\MarketingApp\Desktop\obj\Debug\Desktop.exe
+D:\Projects\MarketingApp\Desktop\obj\Debug\Desktop.pdb
