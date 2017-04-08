@@ -22,7 +22,7 @@ namespace BusinessLogic.Services.EntityServices
                 {
                     _cartProducts.Add(product);
                 }
-                catch (Exception ex)
+                catch 
                 {
                     throw;
                 }
@@ -35,7 +35,7 @@ namespace BusinessLogic.Services.EntityServices
                 {
                     _cartProducts.Delete(product.Id);
                 }
-                catch (Exception ex)
+                catch
                 {
                     throw;
                 }
@@ -48,7 +48,7 @@ namespace BusinessLogic.Services.EntityServices
             {
                 _cartProducts.Delete(id);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -108,7 +108,7 @@ namespace BusinessLogic.Services.EntityServices
                     _cartProducts.Edit(product);
                 
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }

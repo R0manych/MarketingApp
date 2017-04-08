@@ -1,4 +1,5 @@
-﻿using BusinessLogic.BusinessServices.Interfaces;
+﻿
+using BusinessLogic.Services.BusinessServices.Interfaces;
 using BusinessLogic.Services.EntityServices;
 using BusinessLogic.Services.EntityServices.Interfaces;
 using DataContextModel.Models;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic.BusinessServices.Interfaces
+namespace BusinessLogic.Services.BusinessServices.Interfaces
 {
     public interface ICountService
     {

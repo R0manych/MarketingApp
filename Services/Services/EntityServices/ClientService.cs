@@ -1,5 +1,5 @@
-﻿using BusinessLogic.BusinessServices.Interfaces;
-using BusinessLogic.Services.BusinessServices;
+﻿using BusinessLogic.Services.BusinessServices;
+using BusinessLogic.Services.BusinessServices.Interfaces;
 using BusinessLogic.Services.EntityServices.Interfaces;
 using DataContextModel.Models;
 using DataContextModel.Repositories;
@@ -52,7 +52,7 @@ namespace BusinessLogic.Services.EntityServices
                 {
                     clients.Add(client);
                 }
-                catch(Exception ex)
+                catch
                 {
                     throw;
                 }
@@ -85,7 +85,7 @@ namespace BusinessLogic.Services.EntityServices
                     clients.Delete(client.Id);
                     
                 }
-                catch (Exception ex)
+                catch
                 {
                     throw;
                 }
@@ -126,8 +126,8 @@ namespace BusinessLogic.Services.EntityServices
              "Почта: " + client.Email + Environment.NewLine +
              "Паспорт: " + client.Passport + Environment.NewLine +
              "Контракт: " + client.Contract + Environment.NewLine +
-             "Предыдущий месяц: " + _countService.CountPoints(client.Id, DateTime.Now.AddMonths(-1)).ToString() + Environment.NewLine +
-             "Текущий месяц: " + _countService.CountPoints(client.Id, DateTime.Now).ToString() + Environment.NewLine;
+             "Предыдущий месяц: " + _countService.CountPoints(client, DateTime.Now.AddMonths(-1)).ToString() + Environment.NewLine +
+             "Текущий месяц: " + _countService.CountPoints(client, DateTime.Now).ToString() + Environment.NewLine;
 
         public Client GetById(int id)
         {
@@ -146,7 +146,7 @@ namespace BusinessLogic.Services.EntityServices
                     clients.Edit(client);
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
