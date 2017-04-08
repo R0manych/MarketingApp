@@ -1,6 +1,7 @@
 ﻿using BusinessLogic.BusinessServices.Interfaces;
 using BusinessLogic.Services.EntityServices;
 using BusinessLogic.Services.EntityServices.Interfaces;
+using DataContextModel.Models;
 using DataContextModel.Repositories;
 using System;
 using System.Collections.Generic;
@@ -21,31 +22,57 @@ namespace BusinessLogic.Services.BusinessServices
     {
         private const string FILENAME = "settings.txt";
         private const double _leaderPercent = 0.18;
+        private const double _leaderReward = 0.03;
 
-        public double CountProfit(int id, DateTime date)
+        public double CountProfit(Client client, DateTime date)
         {
             var settings = LoadSettings(FILENAME);
             double sum = 0;
-            using (var _clientRep = new ClientRepository())
+            var pointsWithoutLeaders = CountAllChildPoint(client, date, settings);
+            int countChildLeaders = 0;
+            foreach (var child in client.Children)
             {
-                var client = _clientRep.GetById(id);
-                foreach (var child in client.Children)
+                var childSum = CountPoints(child, date);
+                double koef = GetValue(settings, childSum);
+                if (koef < _leaderPercent)
                 {
-                    var childSum = CountPoints(child.Id, date);
-                    double k = GetValue(settings, childSum);
-                    if (k < _leaderPercent)
+                    sum += koef * childSum;
+                }
+                else
+                {
+                    countChildLeaders++;
+                    if (pointsWithoutLeaders >= settings.Last().Value && countChildLeaders > 1)
                     {
-                        sum += k * childSum;
+                        sum += _leaderReward * childSum;
+                    }
+                    else if (pointsWithoutLeaders >= settings.Last().Value / 2 && countChildLeaders > 1)
+                    {
+                        sum += _leaderReward / 2 * childSum;
                     }
                 }
             }
             return sum * ShoppingCartService.PointsValue;
         }
 
-        public int CountPoints(int id, DateTime date)
+        private int CountAllChildPoint(Client client, DateTime date, List<PercentSetting> settings)
+        {
+            int sum = 0;
+            foreach (var child in client.Children)
+            {
+                var childSum = CountPoints(child, date);
+                double koef = GetValue(settings, childSum);
+                if (koef < _leaderPercent)
+                {
+                    sum += childSum;
+                }
+            }
+            return sum;
+        }
+
+        public int CountPoints(Client client, DateTime date)
         {
             IShoppingCartService _cartService = new ShoppingCartService();
-            var carts = _cartService.GetAll().Where(c => c.ClientId == id).ToList();
+            var carts = _cartService.GetAll().Where(c => c.ClientId == client.Id).ToList();
             int sum = 0;
             foreach (var cart in carts)
             {
@@ -54,13 +81,9 @@ namespace BusinessLogic.Services.BusinessServices
                     sum += _cartService.CountPoints(cart.Id);
                 }
             }
-            using (var _clients = new ClientRepository())
+            foreach (var child in client.Children)
             {
-                var client = _clients.GetById(id);
-                foreach (var child in client.Children)
-                {
-                    sum += CountPoints(child.Id, date);
-                }
+                sum += CountPoints(child, date);
             }
             return sum;
         }
