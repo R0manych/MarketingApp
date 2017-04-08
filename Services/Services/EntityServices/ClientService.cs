@@ -117,7 +117,7 @@ namespace BusinessLogic.Services.EntityServices
 
         public string SetName(Client client) => client.Name + _separator + client.Contract;
 
-        public string ClientToString(Client client)
+        public string ClientToString(Client client, DateTime date)
          => "Имя: " + client.Name + Environment.NewLine +
              "Телефон: " + client.Phone + Environment.NewLine +
              "Адрес: " + client.Adress + Environment.NewLine +
@@ -126,8 +126,7 @@ namespace BusinessLogic.Services.EntityServices
              "Почта: " + client.Email + Environment.NewLine +
              "Паспорт: " + client.Passport + Environment.NewLine +
              "Контракт: " + client.Contract + Environment.NewLine +
-             "Предыдущий месяц: " + _countService.CountPoints(client, DateTime.Now.AddMonths(-1)).ToString() + Environment.NewLine +
-             "Текущий месяц: " + _countService.CountPoints(client, DateTime.Now).ToString() + Environment.NewLine;
+             "Баллы: " + _countService.CountPoints(client, date).ToString() + Environment.NewLine;
 
         public Client GetById(int id)
         {
