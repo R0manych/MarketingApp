@@ -63,11 +63,11 @@
     <Compile Include="Forms\Client\ViewClientForm.Designer.cs">
       <DependentUpon>ViewClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Common\AcceotForm.cs">
+    <Compile Include="Forms\Common\AcceptForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Common\AcceotForm.Designer.cs">
-      <DependentUpon>AcceotForm.cs</DependentUpon>
+    <Compile Include="Forms\Common\AcceptForm.Designer.cs">
+      <DependentUpon>AcceptForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -81,8 +81,22 @@
     <Compile Include="Forms\Product\ViewProductForm.Designer.cs">
       <DependentUpon>ViewProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MarketingAppDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MarketingAppDataDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Client\ViewClientForm.resx">
+      <DependentUpon>ViewClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Common\AcceptForm.resx">
+      <DependentUpon>AcceptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Product\ViewProductForm.resx">
+      <DependentUpon>ViewProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -92,6 +106,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="MarketingAppDataDataSet.xsc">
+      <DependentUpon>MarketingAppDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MarketingAppDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MarketingAppDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MarketingAppDataDataSet.xss">
+      <DependentUpon>MarketingAppDataDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +132,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\ShoppingCart\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataContextModel\DataContextModel.csproj">
+      <Project>{59a185ae-81e5-4794-b167-8b46e3b97dfa}</Project>
+      <Name>DataContextModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\BusinessLogic.csproj">
+      <Project>{417bc0a1-0b54-43a0-b489-8abef353f750}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

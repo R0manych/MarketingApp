@@ -1,4 +1,5 @@
 ﻿using Desktop.Forms;
+using Desktop.Forms.Product;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new ViewProductForm());
         }
     }
 }
