@@ -17,13 +17,10 @@ namespace BusinessLogic.Services.EntityServices
         private const char _separator = '|';
         ICountService _countService = new CountService();
 
-        public Client CreateClient(string Name, string Adress, string BankCard, string Birthday, string Contract, string Email, string Passport, string Phone, string Parent)
+        public Client CreateClient(string Name, string Adress, string BankCard, DateTime Birthday, string Contract, string Email, string Passport, string Phone, string Parent)
         {
-            DateTime birth = default(DateTime);
-            if (!(string.IsNullOrEmpty(Birthday)))
-                birth = Convert.ToDateTime(Birthday);
             int parentId = GetByName(Parent).Id;
-            return new Client(Name, Adress, BankCard, birth, Contract, Email, Passport, Phone, parentId);
+            return new Client(Name, Adress, BankCard, Birthday, Contract, Email, Passport, Phone, parentId);
         }
 
         public List<Client> GetChildren(string parent)

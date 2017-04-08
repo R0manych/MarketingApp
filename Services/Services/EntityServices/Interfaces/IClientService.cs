@@ -16,7 +16,7 @@ namespace BusinessLogic.Services.EntityServices.Interfaces
             string Name,
             string Adress,
             string BankCard,
-            string Birthday,
+            DateTime Birthday,
             string Contract,
             string Email,
             string Passport,
