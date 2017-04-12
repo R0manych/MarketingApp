@@ -86,7 +86,7 @@ namespace Desktop.Forms.Client
 
         private void buttonShowHistory_Click(object sender, EventArgs e)
         {
-            var showCartsForm = new ShowCartsForm(_currentClient.Id);
+            var showCartsForm = new ShowAllCartsForm(_currentClient.Id);
             showCartsForm.ShowDialog();
         }
     }
