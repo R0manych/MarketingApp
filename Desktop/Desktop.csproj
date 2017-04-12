@@ -124,6 +124,12 @@
     <EmbeddedResource Include="Forms\ShoppingCart\AddShoppingCartForm.resx">
       <DependentUpon>AddShoppingCartForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShoppingCart\ShowAllCartsForm.resx">
+      <DependentUpon>ShowAllCartsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShoppingCart\ViewShoppingCartForm.resx">
+      <DependentUpon>ViewShoppingCartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
