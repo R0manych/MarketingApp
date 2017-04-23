@@ -75,8 +75,8 @@ namespace Desktop.Forms.Client
         {
             _clientService = new ClientService();
             comboBoxParent.Items.Add(_clientService.GetNames());
-            if (_currentClient.Parent != null)
-                comboBoxParent.SelectedItem = _clientService.SetName(_currentClient.Parent);
+           /* if (_currentClient.Parent != null)
+                comboBoxParent.SelectedItem = _clientService.SetName(_currentClient.Parent);*/
             textBoxAdress.Text = _currentClient.Adress;
             textBoxBank.Text = _currentClient.BankCard;
             birthdayPicker.Value = _currentClient.Birthday;

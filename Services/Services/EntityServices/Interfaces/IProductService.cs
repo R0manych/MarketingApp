@@ -12,7 +12,7 @@ namespace BusinessLogic.Services.EntityServices.Interfaces
         List<string> GetAllNames();
 
         decimal GetPriceByName(string name);
+
+        Product GetByName(string name);
     }
-
-
 }

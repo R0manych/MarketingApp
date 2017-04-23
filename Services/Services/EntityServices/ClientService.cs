@@ -91,10 +91,10 @@ namespace BusinessLogic.Services.EntityServices
 
         public List<Client> GetAll()
         {
-            using (var clients = new ClientRepository())
-            {
-                return clients.GetAll().ToList();
-            }
+             using (var clients = new ClientRepository())
+             {
+                 return clients.GetAll().ToList();
+             }
         }
 
         public List<string> GetNames()
@@ -147,5 +147,14 @@ namespace BusinessLogic.Services.EntityServices
                 throw;
             }
         }  
+
+        public List<Client> GetRootClients()
+        {
+            using (var clients = new ClientRepository())
+            {
+                return clients.GetAll().Where(c => c.ParentId == 0).ToList();
+            }
+        }
+        
     }
 }

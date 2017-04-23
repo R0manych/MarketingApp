@@ -80,13 +80,13 @@ namespace Desktop.Forms.Client
 
         private void buttonAddOrder_Click(object sender, EventArgs e)
         {
-            var addCartForm = new AddShoppingCartForm(_currentClient.Id);
+            var addCartForm = new AddShoppingCartForm();
             addCartForm.ShowDialog();
         }
 
         private void buttonShowHistory_Click(object sender, EventArgs e)
         {
-            var showCartsForm = new ShowCartsForm(_currentClient.Id);
+            var showCartsForm = new ShowAllCartsForm(_currentClient.Id);
             showCartsForm.ShowDialog();
         }
     }

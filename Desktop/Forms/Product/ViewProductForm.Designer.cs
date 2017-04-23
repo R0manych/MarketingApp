@@ -34,7 +34,7 @@
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.marketingAppDataDataSet = new Desktop.MarketingAppDataDataSet();
+            this.marketingAppDataDataSet = new Desktop.ProductsDataSet();
             this.productsTableAdapter = new Desktop.MarketingAppDataDataSetTableAdapters.ProductsTableAdapter();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
@@ -139,7 +139,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGrid;
-        private MarketingAppDataDataSet marketingAppDataDataSet;
+        private ProductsDataSet marketingAppDataDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private MarketingAppDataDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;

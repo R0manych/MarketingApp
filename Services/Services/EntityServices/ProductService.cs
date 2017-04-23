@@ -67,5 +67,10 @@ namespace BusinessLogic.Services.EntityServices
         }
 
         public decimal GetPriceByName(string name) => _products.GetByName(name).Price;
+
+        public Product GetByName(string name)
+        {
+            return _products.GetAll().FirstOrDefault(p => p.Name == name);
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace Desktop.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MarketingAppData;Integrated Se" +
-            "curity=True")]
+            "curity=True; MultiSubnetFailover=False;MultipleActiveResultSets=True;")]
         public string MarketingAppDataConnectionString {
             get {
                 return ((string)(this["MarketingAppDataConnectionString"]));

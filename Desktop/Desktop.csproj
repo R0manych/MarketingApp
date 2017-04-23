@@ -45,6 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartProductsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartProductsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CartsDataSet.cs">
+      <DependentUpon>CartsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CartsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Client\AddClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,21 +94,67 @@
     <Compile Include="Forms\Product\ViewProductForm.Designer.cs">
       <DependentUpon>ViewProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MarketingAppDataDataSet.Designer.cs">
+    <Compile Include="Forms\ShoppingCart\AddShoppingCartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShoppingCart\AddShoppingCartForm.Designer.cs">
+      <DependentUpon>AddShoppingCartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShoppingCart\EditShoppingCartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShoppingCart\EditShoppingCartForm.Designer.cs">
+      <DependentUpon>EditShoppingCartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShoppingCart\ShowAllCartsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShoppingCart\ShowAllCartsForm.Designer.cs">
+      <DependentUpon>ShowAllCartsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShoppingCart\ViewShoppingCartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShoppingCart\ViewShoppingCartForm.Designer.cs">
+      <DependentUpon>ViewShoppingCartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUtils\MainFormUtils.cs" />
+    <Compile Include="ProductsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MarketingAppDataDataSet.xsd</DependentUpon>
+      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Client\AddClientForm.resx">
+      <DependentUpon>AddClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\EditClientForm.resx">
+      <DependentUpon>EditClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Client\ViewClientForm.resx">
       <DependentUpon>ViewClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Common\AcceptForm.resx">
       <DependentUpon>AcceptForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Product\ViewProductForm.resx">
       <DependentUpon>ViewProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShoppingCart\AddShoppingCartForm.resx">
+      <DependentUpon>AddShoppingCartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShoppingCart\EditShoppingCartForm.resx">
+      <DependentUpon>EditShoppingCartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShoppingCart\ShowAllCartsForm.resx">
+      <DependentUpon>ShowAllCartsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShoppingCart\ViewShoppingCartForm.resx">
+      <DependentUpon>ViewShoppingCartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,16 +165,38 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="MarketingAppDataDataSet.xsc">
-      <DependentUpon>MarketingAppDataDataSet.xsd</DependentUpon>
+    <None Include="CartProductsDataSet.xsc">
+      <DependentUpon>CartProductsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="MarketingAppDataDataSet.xsd">
+    <None Include="CartProductsDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MarketingAppDataDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>CartProductsDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="MarketingAppDataDataSet.xss">
-      <DependentUpon>MarketingAppDataDataSet.xsd</DependentUpon>
+    <None Include="CartProductsDataSet.xss">
+      <DependentUpon>CartProductsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CartsDataSet.xsc">
+      <DependentUpon>CartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CartsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CartsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CartsDataSet.xss">
+      <DependentUpon>CartsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProductsDataSet.xsc">
+      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProductsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProductsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProductsDataSet.xss">
+      <DependentUpon>ProductsDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,9 +211,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\ShoppingCart\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DataContextModel\DataContextModel.csproj">
       <Project>{59a185ae-81e5-4794-b167-8b46e3b97dfa}</Project>
