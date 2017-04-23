@@ -10,11 +10,13 @@ namespace DataContextModel.Models
     {
         public int Id { get; set; }
 
-        public string Number { get; set;}
+        public string Number { get; set; }
 
         public DateTime Date { get; set; }
 
         public int ClientId { get; set; }
+
+        public bool Delivered {get;set;}
 
         public virtual Client Client { get; set; }
 

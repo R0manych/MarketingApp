@@ -30,5 +30,7 @@ namespace BusinessLogic.Services.EntityServices.Interfaces
         string SetName(Client client);
 
         string ClientToString(Client client, DateTime date);
+
+        List<Client> GetRootClients();
     }
 }

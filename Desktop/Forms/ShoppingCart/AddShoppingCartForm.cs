@@ -7,25 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic.Services.EntityServices.Interfaces;
+using BusinessLogic.Services.EntityServices;
 
 namespace Desktop.Forms.ShoppingCart
 {
     public partial class AddShoppingCartForm : Form
     {
-        private int _clientId;
+        int _cartId;
+
+        /// <summary>
+        /// True - add form, False - edit form
+        /// </summary>
+        bool _isNew; 
+
+        ICartProductService _cartProductService;
+        IProductService _productService;
 
         public AddShoppingCartForm()
         {
             InitializeComponent();
+            _cartProductService = new CartProductService();
+            _productService = new ProductService();
         }
 
-        public AddShoppingCartForm(int clientId)
+        private void buttonClose_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
-            _clientId = clientId;
+            Close();
         }
 
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+           
+        }
 
+        private void AddShoppingCartForm_Load(object sender, EventArgs e)
+        {
+            comboBoxProduct.Items.AddRange(_productService.GetAllNames().ToArray());
+        }
 
+        private void buttonAddProduct_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

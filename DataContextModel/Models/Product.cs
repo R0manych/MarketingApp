@@ -17,7 +17,7 @@ namespace DataContextModel.Models
 
         public decimal Price { get; set; }
 
-        public ICollection<CartProduct> CartProducts { get; set; }
+        public virtual ICollection<CartProduct> CartProducts { get; set; }
 
         public Product()
         {

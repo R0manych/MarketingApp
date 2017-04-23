@@ -80,7 +80,7 @@ namespace Desktop.Forms.Client
 
         private void buttonAddOrder_Click(object sender, EventArgs e)
         {
-            var addCartForm = new AddShoppingCartForm(_currentClient.Id);
+            var addCartForm = new AddShoppingCartForm();
             addCartForm.ShowDialog();
         }
 

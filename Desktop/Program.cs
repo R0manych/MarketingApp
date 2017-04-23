@@ -1,5 +1,6 @@
 ﻿using Desktop.Forms;
 using Desktop.Forms.Product;
+using Desktop.Forms.ShoppingCart;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewProductForm());
+            Application.Run(new ViewShoppingCartForm(1));
         }
     }
 }
