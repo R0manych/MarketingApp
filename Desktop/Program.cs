@@ -19,7 +19,7 @@ namespace Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ViewShoppingCartForm(1));
+            Application.Run(new MainForm());
         }
     }
 }

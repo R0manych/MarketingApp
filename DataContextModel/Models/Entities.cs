@@ -9,7 +9,7 @@ namespace DataContextModel.Models
 {
     public class Entities : DbContext
     {
-        public Entities() : base("MarketingAppDataConnectionString")
+        public Entities() : base("Desktop.Properties.Settings.MarketingAppDataConnectionString")
         {
 
         }

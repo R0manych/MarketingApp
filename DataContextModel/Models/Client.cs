@@ -35,7 +35,7 @@ namespace DataContextModel.Models
 
         public int ParentId { get; set; }
 
-        //public virtual Client Parent { get; set; }
+        public virtual Client Parent { get; set; }
 
         public virtual ICollection<Client> Children { get; set; }
 

@@ -9,3 +9,14 @@ D:\Projects\MarketingApp\DataContextModel\bin\Debug\ru\EntityFramework.resources
 D:\Projects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.csprojResolveAssemblyReference.cache
 D:\Projects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.dll
 D:\Projects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.pdb
+D:\Projects\GitProjects\MarketingApp\DataContextModel\bin\Debug\DataContextModel.dll.config
+D:\Projects\GitProjects\MarketingApp\DataContextModel\bin\Debug\DataContextModel.dll
+D:\Projects\GitProjects\MarketingApp\DataContextModel\bin\Debug\DataContextModel.pdb
+D:\Projects\GitProjects\MarketingApp\DataContextModel\bin\Debug\EntityFramework.dll
+D:\Projects\GitProjects\MarketingApp\DataContextModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\GitProjects\MarketingApp\DataContextModel\bin\Debug\EntityFramework.xml
+D:\Projects\GitProjects\MarketingApp\DataContextModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\GitProjects\MarketingApp\DataContextModel\bin\Debug\ru\EntityFramework.resources.dll
+D:\Projects\GitProjects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.csprojResolveAssemblyReference.cache
+D:\Projects\GitProjects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.dll
+D:\Projects\GitProjects\MarketingApp\DataContextModel\obj\Debug\DataContextModel.pdb
