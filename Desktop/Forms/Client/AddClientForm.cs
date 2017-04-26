@@ -23,7 +23,6 @@ namespace Desktop.Forms.Client
 
         private void textBox_Enter(object sender, EventArgs e)
         {
-            ((TextBox)sender).Text = "";
             ((TextBox)sender).ForeColor = Color.Black;
         }
 

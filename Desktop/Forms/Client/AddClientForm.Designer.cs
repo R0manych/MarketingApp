@@ -75,7 +75,7 @@
             this.textBoxBirth.Name = "textBoxBirth";
             this.textBoxBirth.ReadOnly = true;
             this.textBoxBirth.Size = new System.Drawing.Size(192, 26);
-            this.textBoxBirth.TabIndex = 2;
+            this.textBoxBirth.TabIndex = 11;
             this.textBoxBirth.Text = "Дата рождения:";
             this.textBoxBirth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 398);
+            this.ClientSize = new System.Drawing.Size(432, 398);
             this.Controls.Add(this.textBoxParent);
             this.Controls.Add(this.comboBoxParent);
             this.Controls.Add(this.buttonClose);
