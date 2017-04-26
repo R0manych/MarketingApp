@@ -100,6 +100,7 @@
             this.textBoxPassport.TabIndex = 15;
             this.textBoxPassport.Text = "Паспорт";
             this.textBoxPassport.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPassport.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // textBoxContract
             // 
@@ -111,6 +112,7 @@
             this.textBoxContract.TabIndex = 17;
             this.textBoxContract.Text = "Контракт";
             this.textBoxContract.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxContract.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // textBoxAdress
             // 
@@ -122,6 +124,7 @@
             this.textBoxAdress.TabIndex = 18;
             this.textBoxAdress.Text = "Адрес";
             this.textBoxAdress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxAdress.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // textBoxBank
             // 
@@ -133,6 +136,7 @@
             this.textBoxBank.TabIndex = 19;
             this.textBoxBank.Text = "Номер счета";
             this.textBoxBank.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxBank.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // textBoxEmail
             // 
@@ -144,6 +148,7 @@
             this.textBoxEmail.TabIndex = 20;
             this.textBoxEmail.Text = "E-mail";
             this.textBoxEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxEmail.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // textBoxBirth
             // 
@@ -167,6 +172,7 @@
             this.textBoxPhone.TabIndex = 14;
             this.textBoxPhone.Text = "Телефон";
             this.textBoxPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPhone.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // textBoxName
             // 
@@ -178,6 +184,7 @@
             this.textBoxName.TabIndex = 13;
             this.textBoxName.Text = "ФИО";
             this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxName.Enter += new System.EventHandler(this.textBox_Enter);
             // 
             // EditClientForm
             // 
@@ -201,6 +208,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "EditClientForm";
             this.Text = "Редактировать";
+            this.Load += new System.EventHandler(this.AddClientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

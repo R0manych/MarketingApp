@@ -66,7 +66,7 @@ namespace Desktop.Forms.Client
         private void AddClientForm_Load(object sender, EventArgs e)
         {
             _clientService = new ClientService();
-            comboBoxParent.DataSource = _clientService.GetNames(_clientService.GetAll());
+            comboBoxParent.DataSource = _clientService.GetNames();
         }
     }
 }

@@ -31,7 +31,6 @@ namespace Desktop.Forms.Client
 
         private void textBox_Enter(object sender, EventArgs e)
         {
-            ((TextBox)sender).Text = "";
             ((TextBox)sender).ForeColor = Color.Black;
         }
 
@@ -51,6 +50,7 @@ namespace Desktop.Forms.Client
             {
                 var cient = new DataContextModel.Models.Client()
                 {
+                    Id = _currentClient.Id,
                     Name = textBoxName.Text,
                     Phone = textBoxPhone.Text,
                     Passport = textBoxPassport.Text,
@@ -74,17 +74,19 @@ namespace Desktop.Forms.Client
         private void AddClientForm_Load(object sender, EventArgs e)
         {
             _clientService = new ClientService();
-            comboBoxParent.Items.Add(_clientService.GetNames());
-           /* if (_currentClient.Parent != null)
-                comboBoxParent.SelectedItem = _clientService.SetName(_currentClient.Parent);*/
-            textBoxAdress.Text = _currentClient.Adress;
-            textBoxBank.Text = _currentClient.BankCard;
-            birthdayPicker.Value = _currentClient.Birthday;
-            textBoxContract.Text = _currentClient.Contract;
-            textBoxEmail.Text = _currentClient.Email;
-            textBoxName.Text = _currentClient.Name;
-            textBoxPassport.Text = _currentClient.Passport;
-            textBoxPhone.Text = _currentClient.Phone;
+            comboBoxParent.DataSource = _clientService.GetNames();
+            if (_currentClient.ParentId != 0)
+            {
+                comboBoxParent.SelectedItem = _clientService.SetName(_clientService.GetById(_currentClient.ParentId));
+            }
+            textBoxAdress.Text = _currentClient.Adress == "" ? "Адрес" : _currentClient.Adress;
+            textBoxBank.Text = _currentClient.BankCard == "" ? "Банковская карта" : _currentClient.BankCard;
+            birthdayPicker.Value = _currentClient.Birthday == null ? DateTime.Now : _currentClient.Birthday;
+            textBoxContract.Text = _currentClient.Contract == "" ? "Договор" : _currentClient.Contract;
+            textBoxEmail.Text = _currentClient.Email == "" ? "E-mail" : _currentClient.Email;
+            textBoxName.Text = _currentClient.Name == "" ? "ФИО" : _currentClient.Name;
+            textBoxPassport.Text = _currentClient.Passport == "Пасспорт" ? "" : _currentClient.Passport;
+            textBoxPhone.Text = _currentClient.Phone == "" ? "Телефон" : _currentClient.Phone;
         }
     }
 }

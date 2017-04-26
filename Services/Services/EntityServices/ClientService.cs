@@ -109,8 +109,10 @@ namespace BusinessLogic.Services.EntityServices
 
         public List<string> GetNames()
         {
-            var clients = new List<Client>();
-            return GetNames(clients);
+            using (var clients = new ClientRepository())
+            {
+                return GetNames(clients.GetAll().ToList());
+            }
         }
 
         public string SetName(Client client) => client.Name + _separator + client.Contract;

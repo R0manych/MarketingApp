@@ -37,6 +37,7 @@ namespace Desktop.FormUtils
         {
             IClientService _clientService = new ClientService();
             var childClients = _clientService.GetChildren(nodeClient.Text);
+            nodeClient.Nodes.Clear();
             SetNode(nodeClient, childClients);            
         }
     }
