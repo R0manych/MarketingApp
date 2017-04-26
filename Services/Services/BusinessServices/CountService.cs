@@ -4,6 +4,7 @@ using BusinessLogic.Services.EntityServices;
 using BusinessLogic.Services.EntityServices.Interfaces;
 using DataContextModel.Models;
 using DataContextModel.Repositories;
+using Services.Properties;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,13 +22,12 @@ namespace BusinessLogic.Services.BusinessServices
 
     public class CountService : ICountService
     {
-        private const string FILENAME = "settings.txt";
         private const double _leaderPercent = 0.18;
         private const double _leaderReward = 0.03;
 
         public double CountProfit(Client client, DateTime date)
         {
-            var settings = LoadSettings(FILENAME);
+            var settings = LoadSettings();
             double sum = 0;
             var pointsWithoutLeaders = CountAllChildPoint(client, date, settings);
             int countChildLeaders = 0;
@@ -89,13 +89,13 @@ namespace BusinessLogic.Services.BusinessServices
             return sum;
         }
 
-        private List<PercentSetting> LoadSettings(string fileName)
+        private List<PercentSetting> LoadSettings()
         {
             var settings = new List<PercentSetting>();
-            var sr = new StreamReader(fileName);
-            while (!sr.EndOfStream)
+            var settingsString = Resources.Settings;
+            while (settingsString != "")
             {
-                var line = sr.ReadLine();
+                var line = settingsString;//переделать
                 var lineArr = line.Split(' ');
                 settings.Add(new PercentSetting()
                 {

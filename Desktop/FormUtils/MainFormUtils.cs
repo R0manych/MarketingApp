@@ -12,11 +12,11 @@ namespace Desktop.FormUtils
 {
     public static class MainFormUtils
     {
-        public static void SetRoot(TreeView treeViewClients, List<Client> clients)
+        public static void SetRoot(TreeView treeViewClients, List<string> clients)
         {
             foreach (var client in clients)
             {
-                var node = new TreeNode(client.Name);
+                var node = new TreeNode(client);
                 node.Nodes.Add("dummy");
                 treeViewClients.Nodes.Add(node);
             }

@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.treeViewClients = new System.Windows.Forms.TreeView();
             this.groupBoxClientControls = new System.Windows.Forms.GroupBox();
-            this.buttonOpen = new System.Windows.Forms.Button();
-            this.buttonNewOrder = new System.Windows.Forms.Button();
-            this.buttonHistory = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonHistory = new System.Windows.Forms.Button();
+            this.buttonNewOrder = new System.Windows.Forms.Button();
+            this.buttonOpen = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.contextMenuClientControls = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +51,8 @@
             // 
             // treeViewClients
             // 
+            this.treeViewClients.ContextMenuStrip = this.contextMenuClientControls;
+            this.treeViewClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.treeViewClients.Location = new System.Drawing.Point(12, 12);
             this.treeViewClients.Name = "treeViewClients";
             this.treeViewClients.Size = new System.Drawing.Size(666, 458);
@@ -72,49 +74,16 @@
             this.groupBoxClientControls.TabStop = false;
             this.groupBoxClientControls.Text = "Клиент";
             // 
-            // buttonOpen
+            // buttonAdd
             // 
-            this.buttonOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonOpen.Location = new System.Drawing.Point(17, 19);
-            this.buttonOpen.Name = "buttonOpen";
-            this.buttonOpen.Size = new System.Drawing.Size(174, 41);
-            this.buttonOpen.TabIndex = 3;
-            this.buttonOpen.Text = "Открыть";
-            this.buttonOpen.UseVisualStyleBackColor = true;
-            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
-            // 
-            // buttonNewOrder
-            // 
-            this.buttonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNewOrder.Location = new System.Drawing.Point(17, 160);
-            this.buttonNewOrder.Name = "buttonNewOrder";
-            this.buttonNewOrder.Size = new System.Drawing.Size(174, 41);
-            this.buttonNewOrder.TabIndex = 4;
-            this.buttonNewOrder.Text = "Новый заказ";
-            this.buttonNewOrder.UseVisualStyleBackColor = true;
-            this.buttonNewOrder.Click += new System.EventHandler(this.buttonNewOrder_Click);
-            // 
-            // buttonHistory
-            // 
-            this.buttonHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonHistory.Location = new System.Drawing.Point(17, 207);
-            this.buttonHistory.Name = "buttonHistory";
-            this.buttonHistory.Size = new System.Drawing.Size(174, 41);
-            this.buttonHistory.TabIndex = 5;
-            this.buttonHistory.Text = "История заказов";
-            this.buttonHistory.UseVisualStyleBackColor = true;
-            this.buttonHistory.Click += new System.EventHandler(this.buttonHistory_Click);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDelete.Location = new System.Drawing.Point(17, 254);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(174, 41);
-            this.buttonDelete.TabIndex = 6;
-            this.buttonDelete.Text = "Удалить";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Location = new System.Drawing.Point(17, 66);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(174, 41);
+            this.buttonAdd.TabIndex = 8;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
@@ -127,16 +96,49 @@
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
-            // buttonAdd
+            // buttonDelete
             // 
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd.Location = new System.Drawing.Point(17, 66);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(174, 41);
-            this.buttonAdd.TabIndex = 8;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.Location = new System.Drawing.Point(17, 254);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(174, 41);
+            this.buttonDelete.TabIndex = 6;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonHistory
+            // 
+            this.buttonHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonHistory.Location = new System.Drawing.Point(17, 207);
+            this.buttonHistory.Name = "buttonHistory";
+            this.buttonHistory.Size = new System.Drawing.Size(174, 41);
+            this.buttonHistory.TabIndex = 5;
+            this.buttonHistory.Text = "История заказов";
+            this.buttonHistory.UseVisualStyleBackColor = true;
+            this.buttonHistory.Click += new System.EventHandler(this.buttonHistory_Click);
+            // 
+            // buttonNewOrder
+            // 
+            this.buttonNewOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNewOrder.Location = new System.Drawing.Point(17, 160);
+            this.buttonNewOrder.Name = "buttonNewOrder";
+            this.buttonNewOrder.Size = new System.Drawing.Size(174, 41);
+            this.buttonNewOrder.TabIndex = 4;
+            this.buttonNewOrder.Text = "Новый заказ";
+            this.buttonNewOrder.UseVisualStyleBackColor = true;
+            this.buttonNewOrder.Click += new System.EventHandler(this.buttonNewOrder_Click);
+            // 
+            // buttonOpen
+            // 
+            this.buttonOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOpen.Location = new System.Drawing.Point(17, 19);
+            this.buttonOpen.Name = "buttonOpen";
+            this.buttonOpen.Size = new System.Drawing.Size(174, 41);
+            this.buttonOpen.TabIndex = 3;
+            this.buttonOpen.Text = "Открыть";
+            this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
             // buttonClose
             // 
@@ -159,7 +161,7 @@
             this.историяЗаказовToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.contextMenuClientControls.Name = "contextMenuClientControls";
-            this.contextMenuClientControls.Size = new System.Drawing.Size(166, 158);
+            this.contextMenuClientControls.Size = new System.Drawing.Size(166, 136);
             // 
             // открытьToolStripMenuItem
             // 

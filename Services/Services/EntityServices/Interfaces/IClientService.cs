@@ -9,6 +9,8 @@ namespace BusinessLogic.Services.EntityServices.Interfaces
 {
     public interface IClientService : IBaseEntityService<Client>
     {
+        List<string> GetNames(List<Client> clients);
+
         List<string> GetNames();
 
         Client CreateClient
@@ -31,6 +33,6 @@ namespace BusinessLogic.Services.EntityServices.Interfaces
 
         string ClientToString(Client client, DateTime date);
 
-        List<Client> GetRootClients();
+        List<string> GetRootClients();
     }
 }

@@ -97,19 +97,20 @@ namespace BusinessLogic.Services.EntityServices
              }
         }
 
-        public List<string> GetNames()
+        public List<string> GetNames(List<Client> clients)
         {
-            List<Client> clients = new List<Client>();
-            using (var clientsRep = new ClientRepository())
-            {
-                clients = clientsRep.GetAll().ToList();
-            }
             List<string> names = new List<string>();
             foreach (var client in clients)
             {
                 names.Add(SetName(client));
             }
             return names;
+        }
+
+        public List<string> GetNames()
+        {
+            var clients = new List<Client>();
+            return GetNames(clients);
         }
 
         public string SetName(Client client) => client.Name + _separator + client.Contract;
@@ -148,13 +149,15 @@ namespace BusinessLogic.Services.EntityServices
             }
         }  
 
-        public List<Client> GetRootClients()
+        public List<string> GetRootClients()
         {
-            using (var clients = new ClientRepository())
+            List<Client> clients = new List<Client>();
+            using (var clientsRep = new ClientRepository())
             {
-                return clients.GetAll().Where(c => c.ParentId == 0).ToList();
+                clients = clientsRep.GetAll().Where(c => c.ParentId == 0).ToList();
             }
+            return GetNames(clients);
         }
-        
+
     }
 }

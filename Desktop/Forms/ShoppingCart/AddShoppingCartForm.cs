@@ -9,17 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic.Services.EntityServices.Interfaces;
 using BusinessLogic.Services.EntityServices;
+using DataContextModel.ViewModels;
 
 namespace Desktop.Forms.ShoppingCart
 {
     public partial class AddShoppingCartForm : Form
     {
         int _cartId;
-
-        /// <summary>
-        /// True - add form, False - edit form
-        /// </summary>
-        bool _isNew; 
 
         ICartProductService _cartProductService;
         IProductService _productService;
@@ -38,16 +34,21 @@ namespace Desktop.Forms.ShoppingCart
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-           
+            _cartProductService.SaveOrUpdate(dataGridCart.DataSource as List<CartProductView>);   
         }
 
         private void AddShoppingCartForm_Load(object sender, EventArgs e)
         {
-            comboBoxProduct.Items.AddRange(_productService.GetAllNames().ToArray());
+            comboBoxProduct.DataSource = _productService.GetAllNames().ToArray();
+            dataGridCart.DataSource = _cartProductService.GetByCartId(_cartId);
         }
 
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
+            var product = _productService.GetByName(comboBoxProduct.SelectedText);
+            ((IList<CartProductView>)dataGridCart.DataSource).Add(
+                new CartProductView(product.Name, 0, _cartId, _productService.GetPriceByName(product.Name)));
+
         }
     }
 }

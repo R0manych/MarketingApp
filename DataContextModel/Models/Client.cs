@@ -37,7 +37,7 @@ namespace DataContextModel.Models
 
         public virtual Client Parent { get; set; }
 
-        public virtual ICollection<Client> Children { get; set; }
+        public ICollection<Client> Children { get; set; }
 
         public virtual ICollection<ShoppingCart> Carts { get; set; }
 
