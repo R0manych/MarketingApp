@@ -14,6 +14,7 @@ namespace Desktop.FormUtils
     {
         public static void SetRoot(TreeView treeViewClients, List<string> clients)
         {
+            treeViewClients.Nodes.Clear();
             foreach (var client in clients)
             {
                 var node = new TreeNode(client);

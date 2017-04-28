@@ -51,13 +51,16 @@ namespace Desktop.Forms
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             var addClientForm = new AddClientForm();
-            addClientForm.Show();
+            addClientForm.ShowDialog();
+            MainFormUtils.SetRoot(treeViewClients, _clientService.GetRootClients());
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            var editClientForm = new EditClientForm(_clientService.GetByName(treeViewClients.SelectedNode.Text));
-            editClientForm.Show();
+            var client = _clientService.GetByName(treeViewClients.SelectedNode.Text);
+            var editClientForm = new EditClientForm(client);
+            editClientForm.ShowDialog();
+            MainFormUtils.SetRoot(treeViewClients, _clientService.GetRootClients());
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

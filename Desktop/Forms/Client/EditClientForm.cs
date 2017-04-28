@@ -48,7 +48,7 @@ namespace Desktop.Forms.Client
         {
             if (CheckValidation())
             {
-                var cient = new DataContextModel.Models.Client()
+                var client = new DataContextModel.Models.Client()
                 {
                     Id = _currentClient.Id,
                     Name = textBoxName.Text,
@@ -59,9 +59,16 @@ namespace Desktop.Forms.Client
                     BankCard = textBoxBank.Text,
                     Birthday = birthdayPicker.Value,
                     Email = textBoxEmail.Text,
-                    ParentId = _clientService.GetByName(comboBoxParent.Text).Id
                 };
-                _clientService.Update(cient);
+                if (comboBoxParent.Text != " ")
+                {
+                    client.ParentId = _clientService.GetByName(comboBoxParent.Text).Id;
+                }
+                else
+                {
+                    client.ParentId = 0;
+                }
+                _clientService.Update(client);
                 Close();
             }
         }
@@ -74,10 +81,17 @@ namespace Desktop.Forms.Client
         private void AddClientForm_Load(object sender, EventArgs e)
         {
             _clientService = new ClientService();
-            comboBoxParent.DataSource = _clientService.GetNames();
+            var names = _clientService.GetNames();
+            names.Add(" ");
+            names.Remove(_clientService.SetName(_currentClient));
+            comboBoxParent.DataSource = names;
             if (_currentClient.ParentId != 0)
             {
                 comboBoxParent.SelectedItem = _clientService.SetName(_clientService.GetById(_currentClient.ParentId));
+            }
+            else
+            {
+                comboBoxParent.SelectedItem = (" ");
             }
             textBoxAdress.Text = _currentClient.Adress == "" ? "Адрес" : _currentClient.Adress;
             textBoxBank.Text = _currentClient.BankCard == "" ? "Банковская карта" : _currentClient.BankCard;
