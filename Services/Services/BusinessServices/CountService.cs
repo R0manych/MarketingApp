@@ -92,16 +92,16 @@ namespace BusinessLogic.Services.BusinessServices
         private List<PercentSetting> LoadSettings()
         {
             var settings = new List<PercentSetting>();
-            var settingsString = Resources.Settings;
-            while (settingsString != "")
+            var sr = Resources.Settings;
+            sr = sr.Replace("\r\n", " ");
+            var lineArr = sr.Split(' ');
+            for (int i = 0; i < lineArr.Length; i += 2)
             {
-                var line = settingsString;//переделать
-                var lineArr = line.Split(' ');
-                settings.Add(new PercentSetting()
-                {
-                    Value = Convert.ToInt32(lineArr[0]),
-                    Percent = Convert.ToDouble(lineArr[1])
-                });
+                var setting = new PercentSetting();
+
+                setting.Value = Convert.ToInt32(lineArr[i]);
+                setting.Percent = Convert.ToDouble(lineArr[i + 1]);
+                settings.Add(setting);
             }
             return settings;
         }
