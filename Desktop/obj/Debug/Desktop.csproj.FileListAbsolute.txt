@@ -52,3 +52,5 @@ D:\Projects\GitProjects\MarketingApp\Desktop\obj\Debug\Desktop.exe
 D:\Projects\GitProjects\MarketingApp\Desktop\obj\Debug\Desktop.pdb
 D:\Projects\GitProjects\MarketingApp\Desktop\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projects\GitProjects\MarketingApp\Desktop\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\MarketingApp\Desktop\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\MarketingApp\Desktop\bin\Debug\EntityFramework.SqlServer.xml

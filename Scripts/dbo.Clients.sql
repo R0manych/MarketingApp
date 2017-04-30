@@ -1,7 +1,7 @@
 ﻿USE [MarketingAppDataStorage]
 GO
 
-/****** Объект: Table [dbo].[Clients] Дата скрипта: 30.04.2017 13:59:19 ******/
+/****** Объект: Table [dbo].[Clients] Дата скрипта: 30.04.2017 15:00:40 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -13,17 +13,17 @@ DROP TABLE [dbo].[Clients];
 
 GO
 CREATE TABLE [dbo].[Clients] (
-    [Id]       INT            IDENTITY (1, 1) NOT NULL,
-    [Name]     NVARCHAR (MAX) NULL,
-    [Phone]    NVARCHAR (MAX) NULL,
-    [Passport] NVARCHAR (MAX) NULL,
-    [Contract] NVARCHAR (MAX) NULL,
+    [Id]       INT            IDENTITY (0, 1) NOT NULL,
+    [Name]     NVARCHAR (50)  NOT NULL,
+    [Phone]    NVARCHAR (20)  NOT NULL,
+    [Passport] NVARCHAR (50)  NULL,
     [Adress]   NVARCHAR (MAX) NULL,
-    [BankCard] NVARCHAR (MAX) NULL,
-    [Birthday] DATETIME       NOT NULL,
-    [Email]    NVARCHAR (MAX) NULL,
+    [Contract] NVARCHAR (50)  NULL,
+    [BankCard] NVARCHAR (50)  NULL,
+    [Birthday] DATETIME       NULL,
+    [Email]    NVARCHAR (50)  NULL,
     [Points]   INT            NULL,
-    [ParentId] INT            NOT NULL
+    [ParentId] INT            NULL
 );
 
 

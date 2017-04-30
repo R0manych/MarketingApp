@@ -22,3 +22,5 @@ D:\Projects\GitProjects\MarketingApp\Services\obj\Debug\Services.dll
 D:\Projects\GitProjects\MarketingApp\Services\obj\Debug\Services.pdb
 D:\Projects\GitProjects\MarketingApp\Services\obj\Debug\Services.Properties.Resources.resources
 D:\Projects\GitProjects\MarketingApp\Services\obj\Debug\BusinessLogic.csproj.GenerateResource.Cache
+D:\Projects\MarketingApp\Services\obj\Debug\Services.Properties.Resources.resources
+D:\Projects\MarketingApp\Services\obj\Debug\BusinessLogic.csproj.GenerateResource.Cache
