@@ -1,7 +1,7 @@
 USE [MarketingAppData]
 GO
 
-/****** Объект: Table [dbo].[Products] Дата скрипта: 01.04.2017 23:59:06 ******/
+/****** Объект: Table [dbo].[Products] Дата скрипта: 30.04.2017 13:59:28 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -13,10 +13,10 @@ DROP TABLE [dbo].[Products];
 
 GO
 CREATE TABLE [dbo].[Products] (
-    [Id]          INT            IDENTITY (1, 1) NOT NULL,
-    [Name]        NVARCHAR (50)  NOT NULL,
-    [Description] NVARCHAR (MAX) NULL,
-    [Price]       MONEY          NULL
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    [Name]        NVARCHAR (50) NOT NULL,
+    [Description] NVARCHAR (50) NULL,
+    [Price]       DECIMAL (18)  NOT NULL
 );
 
 

@@ -1,7 +1,7 @@
 USE [MarketingAppData]
 GO
 
-/****** Объект: Table [dbo].[CartProducts] Дата скрипта: 01.04.2017 23:58:55 ******/
+/****** Объект: Table [dbo].[CartProducts] Дата скрипта: 30.04.2017 13:58:02 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -14,9 +14,9 @@ DROP TABLE [dbo].[CartProducts];
 GO
 CREATE TABLE [dbo].[CartProducts] (
     [Id]        INT IDENTITY (1, 1) NOT NULL,
+    [Count]     INT NOT NULL,
     [ProductId] INT NOT NULL,
-    [CartId]    INT NOT NULL,
-    [Count]     INT NOT NULL
+    [CartId]    INT NOT NULL
 );
 
 
