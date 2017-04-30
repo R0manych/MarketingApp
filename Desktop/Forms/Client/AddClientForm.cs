@@ -40,7 +40,7 @@ namespace Desktop.Forms.Client
         {
             if (CheckValidation())
             {
-                var cient = new DataContextModel.Models.Client()
+                var client = new DataContextModel.Models.Client()
                 {
                     Name = textBoxName.Text,
                     Phone = textBoxPhone.Text,
@@ -49,10 +49,17 @@ namespace Desktop.Forms.Client
                     Contract = textBoxContract.Text,
                     BankCard = textBoxBank.Text,
                     Birthday = birthdayPicker.Value,
-                    Email = textBoxEmail.Text,
-                    ParentId = _clientService.GetByName(comboBoxParent.Text).Id
+                    Email = textBoxEmail.Text,                    
                 };
-                _clientService.Add(cient);
+                if (comboBoxParent.Text != " ")
+                {
+                    client.ParentId = _clientService.GetByName(comboBoxParent.Text).Id;
+                }
+                else
+                {
+                    client.ParentId = 0;
+                }
+                _clientService.Add(client);
                 Close();
             }
         }
@@ -66,7 +73,9 @@ namespace Desktop.Forms.Client
         private void AddClientForm_Load(object sender, EventArgs e)
         {
             _clientService = new ClientService();
-            comboBoxParent.DataSource = _clientService.GetNames();
+            var names = _clientService.GetNames();
+            names.Add(" ");
+            comboBoxParent.DataSource = names;
         }
     }
 }
