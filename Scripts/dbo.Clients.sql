@@ -1,4 +1,4 @@
-USE [MarketingAppData]
+﻿USE [MarketingAppDataStorage]
 GO
 
 /****** Объект: Table [dbo].[Clients] Дата скрипта: 30.04.2017 13:59:19 ******/
