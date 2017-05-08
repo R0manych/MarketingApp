@@ -15,6 +15,8 @@ namespace BusinessLogic.Services.EntityServices.Interfaces
         void Delete(int id);
 
         void SaveOrUpdate(List<CartProductView> products);
+
+        CartProduct GetCartProductFromProduct(Product product);
     }
 
 
