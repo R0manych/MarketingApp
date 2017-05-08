@@ -101,6 +101,15 @@ namespace BusinessLogic.Services.EntityServices
             };
         }
 
+        public CartProduct GetCartProductFromProduct(Product product)
+        {
+            return new CartProduct()
+            {
+                ProductId = product.Id,
+                Count = 0
+            };
+        }
+
         public void Update(CartProduct product)
         {
             try

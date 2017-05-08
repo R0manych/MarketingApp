@@ -49,7 +49,6 @@
     <Compile Include="Services\EntityServices\ClientService.cs" />
     <Compile Include="Services\EntityServices\CartProductService.cs" />
     <Compile Include="Services\EntityServices\Interfaces\ICartProductService.cs" />
-    <Compile Include="Services\EntityServices\Interfaces\ICartService.cs" />
     <Compile Include="Services\EntityServices\Interfaces\IClientService.cs" />
     <Compile Include="Services\EntityServices\Interfaces\IBaseEntityService.cs" />
     <Compile Include="Services\EntityServices\Interfaces\IProductService.cs" />
