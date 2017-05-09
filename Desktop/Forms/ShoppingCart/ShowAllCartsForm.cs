@@ -79,5 +79,11 @@ namespace Desktop.Forms.ShoppingCart
             shoppingCartsTableAdapter.Update(cartsDataSet);
             ReloadForm();
         }
+
+        private void buttonOpen_Click(object sender, EventArgs e)
+        {
+            var viewShoppingCartForm = new ViewShoppingCartForm(Convert.ToInt32(dataGridViewCarts.SelectedRows[0].Cells[0].Value));
+            viewShoppingCartForm.ShowDialog();
+        }
     }
 }

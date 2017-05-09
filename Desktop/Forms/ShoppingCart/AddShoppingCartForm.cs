@@ -11,6 +11,7 @@ using BusinessLogic.Services.EntityServices.Interfaces;
 using BusinessLogic.Services.EntityServices;
 using DataContextModel.ViewModels;
 using Desktop.Forms.Common;
+using DataContextModel.Models;
 
 namespace Desktop.Forms.ShoppingCart
 {
@@ -21,6 +22,7 @@ namespace Desktop.Forms.ShoppingCart
         IShoppingCartService _cartService = new ShoppingCartService();
         private int _clientId;
         private DataContextModel.Models.ShoppingCart _shoppingCart;
+        private BindingList<CartProduct> _bindingListCart;
 
         public AddShoppingCartForm()
         {
@@ -62,15 +64,20 @@ namespace Desktop.Forms.ShoppingCart
             {
                 ClientId = _clientId,
                 Date = DateTime.Now,
-                Delivered = false
+                Delivered = false,
+                Number = "1"    
             };
-            comboBoxProduct.DataSource = _shoppingCart.Products;
+            comboBoxProduct.DataSource = _productService.GetAllNames().ToArray();
+            _bindingListCart = new BindingList<CartProductView>(_shoppingCart.Products.ToList());
+            dataGridCart.DataSource = _bindingListCart;
         }
 
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
-            var product = _productService.GetByName(comboBoxProduct.SelectedText);
+            var product = _productService.GetByName(comboBoxProduct.SelectedValue.ToString());
             _shoppingCart.Products.Add(_cartProductService.GetCartProductFromProduct(product));
+            _bindingListCart = new BindingList<CartProductView>(_shoppingCart.Products.ToList());
+            dataGridCart.DataSource = _bindingListCart;
         }
     }
 }

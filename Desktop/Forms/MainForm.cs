@@ -75,7 +75,7 @@ namespace Desktop.Forms
 
         private void buttonNewOrder_Click(object sender, EventArgs e)
         {
-            var addShoppingCartForm = new AddShoppingCartForm();
+            var addShoppingCartForm = new AddShoppingCartForm(_clientService.GetByName(treeViewClients.SelectedNode.Text).Id);
             addShoppingCartForm.Show();
         }
 

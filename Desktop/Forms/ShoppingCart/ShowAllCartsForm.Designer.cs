@@ -30,24 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewCarts = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shoppingCartsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cartsDataSet = new Desktop.CartsDataSet();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.groupBoxCartControls = new System.Windows.Forms.GroupBox();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.fillByClientIdToolStrip = new System.Windows.Forms.ToolStrip();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shoppingCartsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cartsDataSet = new Desktop.CartsDataSet();
-            this.shoppingCartsTableAdapter = new Desktop.CartsDataSetTableAdapters.ShoppingCartsTableAdapter();
             this.toolStripComboBoxClient = new System.Windows.Forms.ToolStripComboBox();
+            this.shoppingCartsTableAdapter = new Desktop.CartsDataSetTableAdapters.ShoppingCartsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarts)).BeginInit();
-            this.groupBoxCartControls.SuspendLayout();
-            this.fillByClientIdToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartsDataSet)).BeginInit();
+            this.groupBoxCartControls.SuspendLayout();
+            this.fillByClientIdToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewCarts
@@ -63,6 +63,38 @@
             this.dataGridViewCarts.Name = "dataGridViewCarts";
             this.dataGridViewCarts.Size = new System.Drawing.Size(343, 256);
             this.dataGridViewCarts.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата заказа";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // shoppingCartsBindingSource
+            // 
+            this.shoppingCartsBindingSource.DataMember = "ShoppingCarts";
+            this.shoppingCartsBindingSource.DataSource = this.cartsDataSet;
+            // 
+            // cartsDataSet
+            // 
+            this.cartsDataSet.DataSetName = "CartsDataSet";
+            this.cartsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonClose
             // 
@@ -84,6 +116,7 @@
             this.buttonOpen.TabIndex = 2;
             this.buttonOpen.Text = "Открыть";
             this.buttonOpen.UseVisualStyleBackColor = true;
+            this.buttonOpen.Click += new System.EventHandler(this.buttonOpen_Click);
             // 
             // groupBoxCartControls
             // 
@@ -129,48 +162,16 @@
             this.fillByClientIdToolStrip.TabIndex = 6;
             this.fillByClientIdToolStrip.Text = "fillByClientIdToolStrip";
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата заказа";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // shoppingCartsBindingSource
-            // 
-            this.shoppingCartsBindingSource.DataMember = "ShoppingCarts";
-            this.shoppingCartsBindingSource.DataSource = this.cartsDataSet;
-            // 
-            // cartsDataSet
-            // 
-            this.cartsDataSet.DataSetName = "CartsDataSet";
-            this.cartsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // shoppingCartsTableAdapter
-            // 
-            this.shoppingCartsTableAdapter.ClearBeforeFill = true;
-            // 
             // toolStripComboBoxClient
             // 
             this.toolStripComboBoxClient.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.toolStripComboBoxClient.Name = "toolStripComboBoxClient";
             this.toolStripComboBoxClient.Size = new System.Drawing.Size(200, 29);
             this.toolStripComboBoxClient.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxClient_SelectedIndexChanged);
+            // 
+            // shoppingCartsTableAdapter
+            // 
+            this.shoppingCartsTableAdapter.ClearBeforeFill = true;
             // 
             // ShowAllCartsForm
             // 
@@ -185,11 +186,11 @@
             this.Text = "ShowCartsForm";
             this.Load += new System.EventHandler(this.ShowAllCartsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cartsDataSet)).EndInit();
             this.groupBoxCartControls.ResumeLayout(false);
             this.fillByClientIdToolStrip.ResumeLayout(false);
             this.fillByClientIdToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
