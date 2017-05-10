@@ -26,7 +26,7 @@ namespace DataContextModel.ViewModels
         {
             Id = id;
             ProductName = name;
-            Count = 0;
+            Count = 1;
             CartId = cartId;
             Price = price;
         }

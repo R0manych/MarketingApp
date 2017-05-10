@@ -101,14 +101,7 @@ namespace BusinessLogic.Services.EntityServices
             };
         }
 
-        public CartProduct GetCartProductFromProduct(Product product)
-        {
-            return new CartProduct()
-            {
-                ProductId = product.Id,
-                Count = 0
-            };
-        }
+        public CartProductView GetCartProductViewFromProduct(Product product) => new CartProductView(product.Name, product.Id, 0, product.Price);
 
         public void Update(CartProduct product)
         {

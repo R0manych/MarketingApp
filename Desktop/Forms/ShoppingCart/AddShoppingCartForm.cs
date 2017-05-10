@@ -22,7 +22,7 @@ namespace Desktop.Forms.ShoppingCart
         IShoppingCartService _cartService = new ShoppingCartService();
         private int _clientId;
         private DataContextModel.Models.ShoppingCart _shoppingCart;
-        private BindingList<CartProduct> _bindingListCart;
+        private BindingList<CartProductView> _bindingListCart = new BindingList<CartProductView>();
 
         public AddShoppingCartForm()
         {
@@ -45,7 +45,7 @@ namespace Desktop.Forms.ShoppingCart
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            //_cartProductService.SaveOrUpdate(dataGridCart.DataSource as List<CartProductView>);  
+            _cartProductService.SaveOrUpdate(_bindingListCart.ToList<CartProductView>());  
             try
             {
                 _cartService.Add(_shoppingCart);
@@ -68,16 +68,13 @@ namespace Desktop.Forms.ShoppingCart
                 Number = "1"    
             };
             comboBoxProduct.DataSource = _productService.GetAllNames().ToArray();
-            _bindingListCart = new BindingList<CartProductView>(_shoppingCart.Products.ToList());
             dataGridCart.DataSource = _bindingListCart;
         }
 
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
             var product = _productService.GetByName(comboBoxProduct.SelectedValue.ToString());
-            _shoppingCart.Products.Add(_cartProductService.GetCartProductFromProduct(product));
-            _bindingListCart = new BindingList<CartProductView>(_shoppingCart.Products.ToList());
-            dataGridCart.DataSource = _bindingListCart;
+            _bindingListCart.Add(_cartProductService.GetCartProductViewFromProduct(product));
         }
     }
 }

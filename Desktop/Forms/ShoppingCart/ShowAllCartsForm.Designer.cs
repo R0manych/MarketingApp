@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridViewCarts = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deliveredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.shoppingCartsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.shoppingCartDataSet = new Desktop.ShoppingCartDataSet();
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.groupBoxCartControls = new System.Windows.Forms.GroupBox();
@@ -37,17 +44,12 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.toolStripComboBoxClient = new System.Windows.Forms.ToolStripComboBox();
             this.fillByClientIdToolStrip = new System.Windows.Forms.ToolStrip();
-            this.Delivered = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shoppingCartsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-
+            this.shoppingCartsTableAdapter = new Desktop.ShoppingCartDataSetTableAdapters.ShoppingCartsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shoppingCartDataSet)).BeginInit();
             this.groupBoxCartControls.SuspendLayout();
             this.fillByClientIdToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartsDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewCarts
@@ -59,18 +61,66 @@
             this.idDataGridViewTextBoxColumn,
             this.numberDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.Delivered});
+            this.clientIdDataGridViewTextBoxColumn,
+            this.deliveredDataGridViewCheckBoxColumn});
             this.dataGridViewCarts.DataSource = this.shoppingCartsBindingSource;
             this.dataGridViewCarts.Location = new System.Drawing.Point(12, 44);
             this.dataGridViewCarts.Name = "dataGridViewCarts";
-            this.dataGridViewCarts.ReadOnly = true;
-            this.dataGridViewCarts.Size = new System.Drawing.Size(393, 256);
+            this.dataGridViewCarts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewCarts.Size = new System.Drawing.Size(343, 256);
             this.dataGridViewCarts.TabIndex = 0;
+            this.dataGridViewCarts.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridViewCarts_RowsRemoved);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата заказа";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientIdDataGridViewTextBoxColumn
+            // 
+            this.clientIdDataGridViewTextBoxColumn.DataPropertyName = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.HeaderText = "ClientId";
+            this.clientIdDataGridViewTextBoxColumn.Name = "clientIdDataGridViewTextBoxColumn";
+            this.clientIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // deliveredDataGridViewCheckBoxColumn
+            // 
+            this.deliveredDataGridViewCheckBoxColumn.DataPropertyName = "Delivered";
+            this.deliveredDataGridViewCheckBoxColumn.HeaderText = "Доставлено";
+            this.deliveredDataGridViewCheckBoxColumn.Name = "deliveredDataGridViewCheckBoxColumn";
+            this.deliveredDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // shoppingCartsBindingSource
+            // 
+            this.shoppingCartsBindingSource.DataMember = "ShoppingCarts";
+            this.shoppingCartsBindingSource.DataSource = this.shoppingCartDataSet;
+            // 
+            // shoppingCartDataSet
+            // 
+            this.shoppingCartDataSet.DataSetName = "ShoppingCartDataSet";
+            this.shoppingCartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonClose
             // 
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClose.Location = new System.Drawing.Point(440, 260);
+            this.buttonClose.Location = new System.Drawing.Point(388, 260);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(174, 40);
             this.buttonClose.TabIndex = 1;
@@ -94,7 +144,7 @@
             this.groupBoxCartControls.Controls.Add(this.buttonEdit);
             this.groupBoxCartControls.Controls.Add(this.buttonDelete);
             this.groupBoxCartControls.Controls.Add(this.buttonOpen);
-            this.groupBoxCartControls.Location = new System.Drawing.Point(421, 44);
+            this.groupBoxCartControls.Location = new System.Drawing.Point(369, 59);
             this.groupBoxCartControls.Name = "groupBoxCartControls";
             this.groupBoxCartControls.Size = new System.Drawing.Size(213, 163);
             this.groupBoxCartControls.TabIndex = 5;
@@ -136,49 +186,19 @@
             this.toolStripComboBoxClient});
             this.fillByClientIdToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillByClientIdToolStrip.Name = "fillByClientIdToolStrip";
-            this.fillByClientIdToolStrip.Size = new System.Drawing.Size(643, 29);
+            this.fillByClientIdToolStrip.Size = new System.Drawing.Size(604, 29);
             this.fillByClientIdToolStrip.TabIndex = 6;
             this.fillByClientIdToolStrip.Text = "fillByClientIdToolStrip";
             // 
-            // Delivered
+            // shoppingCartsTableAdapter
             // 
-            this.Delivered.DataPropertyName = "Delivered";
-            this.Delivered.HeaderText = "Доставлено";
-            this.Delivered.Name = "Delivered";
-            this.Delivered.ReadOnly = true;
-            this.Delivered.Width = 80;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер заказа";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numberDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата заказа";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 150;
-            // 
-           
+            this.shoppingCartsTableAdapter.ClearBeforeFill = true;
             // 
             // ShowAllCartsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 320);
+            this.ClientSize = new System.Drawing.Size(604, 320);
             this.Controls.Add(this.fillByClientIdToolStrip);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.groupBoxCartControls);
@@ -187,11 +207,11 @@
             this.Text = "ShowCartsForm";
             this.Load += new System.EventHandler(this.ShowAllCartsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.shoppingCartDataSet)).EndInit();
             this.groupBoxCartControls.ResumeLayout(false);
             this.fillByClientIdToolStrip.ResumeLayout(false);
             this.fillByClientIdToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cartsDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,10 +226,15 @@
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBoxClient;
+        private System.Windows.Forms.ToolStrip fillByClientIdToolStrip;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Delivered;
+        private ShoppingCartDataSet shoppingCartDataSet;
         private System.Windows.Forms.BindingSource shoppingCartsBindingSource;
+        private ShoppingCartDataSetTableAdapters.ShoppingCartsTableAdapter shoppingCartsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Delivered;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn deliveredDataGridViewCheckBoxColumn;
     }
 }

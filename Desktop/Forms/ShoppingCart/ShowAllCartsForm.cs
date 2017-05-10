@@ -18,7 +18,6 @@ namespace Desktop.Forms.ShoppingCart
     {
         private int _clientId;
         private IClientService _clientService;
-        private IShoppingCartService _shoppingCartService;
 
         public ShowAllCartsForm()
         {
@@ -33,37 +32,27 @@ namespace Desktop.Forms.ShoppingCart
 
         private void ShowAllCartsForm_Load(object sender, EventArgs e)
         {
+            shoppingCartsTableAdapter.Fill(this.shoppingCartDataSet.ShoppingCarts);
             ReloadForm();
             _clientService = new ClientService();
             toolStripComboBoxClient.Items.AddRange(_clientService.GetNames().ToArray());
+            toolStripComboBoxClient.SelectedItem = _clientService.SetName(_clientService.GetById(_clientId));
         }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void fillByClientIdToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ReloadForm();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
+        }        
 
         private void toolStripComboBoxClient_SelectedIndexChanged(object sender, EventArgs e)
         {
             _clientId = _clientService.GetByName(toolStripComboBoxClient.Text).Id;
+            ReloadForm();
         }
 
         private void ReloadForm()
         {
-            shoppingCartsTableAdapter.FillByClientId(cartsDataSet.ShoppingCarts, _clientId);
+            shoppingCartsTableAdapter.FillByClientId(shoppingCartDataSet.ShoppingCarts, _clientId);
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -76,7 +65,6 @@ namespace Desktop.Forms.ShoppingCart
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             dataGridViewCarts.Rows.Remove(dataGridViewCarts.SelectedRows[0]);
-            shoppingCartsTableAdapter.Update(cartsDataSet);
             ReloadForm();
         }
 
@@ -84,6 +72,11 @@ namespace Desktop.Forms.ShoppingCart
         {
             var viewShoppingCartForm = new ViewShoppingCartForm(Convert.ToInt32(dataGridViewCarts.SelectedRows[0].Cells[0].Value));
             viewShoppingCartForm.ShowDialog();
+        }
+
+        private void dataGridViewCarts_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            shoppingCartsTableAdapter.Update(shoppingCartDataSet);
         }
     }
 }

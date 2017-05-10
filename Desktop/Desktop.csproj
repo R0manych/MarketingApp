@@ -67,6 +67,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CartProductsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +145,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCartDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoppingCartDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Client\AddClientForm.resx">
       <DependentUpon>AddClientForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +189,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CartDataSet.xsc">
+      <DependentUpon>CartDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CartDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CartDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CartDataSet.xss">
+      <DependentUpon>CartDataSet.xsd</DependentUpon>
+    </None>
     <None Include="CartProductsDataSet.xsc">
       <DependentUpon>CartProductsDataSet.xsd</DependentUpon>
     </None>
@@ -211,6 +232,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ShoppingCartDataSet.xsc">
+      <DependentUpon>ShoppingCartDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ShoppingCartDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ShoppingCartDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ShoppingCartDataSet.xss">
+      <DependentUpon>ShoppingCartDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

@@ -28,7 +28,7 @@ namespace BusinessLogic.Services.BusinessServices
         public double CountProfit(Client client, DateTime date)
         {
             var settings = LoadSettings();
-            double sum = 0;
+            double sum = CountPoints(client, date);
             var pointsWithoutLeaders = CountAllChildPoint(client, date, settings);
             int countChildLeaders = 0;
             foreach (var child in client.Children)
@@ -57,7 +57,7 @@ namespace BusinessLogic.Services.BusinessServices
 
         private int CountAllChildPoint(Client client, DateTime date, List<PercentSetting> settings)
         {
-            int sum = 0;
+            int sum = CountPoints(client, date);
             foreach (var child in client.Children)
             {
                 var childSum = CountPoints(child, date);
@@ -97,10 +97,11 @@ namespace BusinessLogic.Services.BusinessServices
             var lineArr = sr.Split(' ');
             for (int i = 0; i < lineArr.Length; i += 2)
             {
-                var setting = new PercentSetting();
-
-                setting.Value = Convert.ToInt32(lineArr[i]);
-                setting.Percent = Convert.ToDouble(lineArr[i + 1]);
+                var setting = new PercentSetting()
+                {
+                    Value = Convert.ToInt32(lineArr[i]),
+                    Percent = Convert.ToDouble(lineArr[i + 1])
+                };
                 settings.Add(setting);
             }
             return settings;
