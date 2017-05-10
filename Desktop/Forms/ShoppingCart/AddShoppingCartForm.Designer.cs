@@ -97,6 +97,10 @@
             this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.dataGridCart);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(384, 446);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(384, 446);
             this.Name = "AddShoppingCartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новый заказ";

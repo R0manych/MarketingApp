@@ -79,5 +79,12 @@ namespace Desktop.Forms.ShoppingCart
         {
             shoppingCartsTableAdapter.Update(shoppingCartDataSet);
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            var addShoppingCartForm = new AddShoppingCartForm(_clientId);
+            addShoppingCartForm.ShowDialog();
+            ReloadForm();
+        }
     }
 }

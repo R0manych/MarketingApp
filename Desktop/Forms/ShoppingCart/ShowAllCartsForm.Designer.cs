@@ -45,6 +45,7 @@
             this.toolStripComboBoxClient = new System.Windows.Forms.ToolStripComboBox();
             this.fillByClientIdToolStrip = new System.Windows.Forms.ToolStrip();
             this.shoppingCartsTableAdapter = new Desktop.ShoppingCartDataSetTableAdapters.ShoppingCartsTableAdapter();
+            this.buttonAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoppingCartDataSet)).BeginInit();
@@ -67,7 +68,7 @@
             this.dataGridViewCarts.Location = new System.Drawing.Point(12, 44);
             this.dataGridViewCarts.Name = "dataGridViewCarts";
             this.dataGridViewCarts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCarts.Size = new System.Drawing.Size(343, 256);
+            this.dataGridViewCarts.Size = new System.Drawing.Size(343, 264);
             this.dataGridViewCarts.TabIndex = 0;
             this.dataGridViewCarts.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridViewCarts_RowsRemoved);
             // 
@@ -120,7 +121,7 @@
             // buttonClose
             // 
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClose.Location = new System.Drawing.Point(388, 260);
+            this.buttonClose.Location = new System.Drawing.Point(398, 268);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(174, 40);
             this.buttonClose.TabIndex = 1;
@@ -141,12 +142,13 @@
             // 
             // groupBoxCartControls
             // 
+            this.groupBoxCartControls.Controls.Add(this.buttonAdd);
             this.groupBoxCartControls.Controls.Add(this.buttonEdit);
             this.groupBoxCartControls.Controls.Add(this.buttonDelete);
             this.groupBoxCartControls.Controls.Add(this.buttonOpen);
-            this.groupBoxCartControls.Location = new System.Drawing.Point(369, 59);
+            this.groupBoxCartControls.Location = new System.Drawing.Point(379, 44);
             this.groupBoxCartControls.Name = "groupBoxCartControls";
-            this.groupBoxCartControls.Size = new System.Drawing.Size(213, 163);
+            this.groupBoxCartControls.Size = new System.Drawing.Size(213, 208);
             this.groupBoxCartControls.TabIndex = 5;
             this.groupBoxCartControls.TabStop = false;
             this.groupBoxCartControls.Text = "Заказы";
@@ -154,7 +156,7 @@
             // buttonEdit
             // 
             this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEdit.Location = new System.Drawing.Point(19, 66);
+            this.buttonEdit.Location = new System.Drawing.Point(19, 113);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(174, 41);
             this.buttonEdit.TabIndex = 6;
@@ -165,7 +167,7 @@
             // buttonDelete
             // 
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDelete.Location = new System.Drawing.Point(19, 113);
+            this.buttonDelete.Location = new System.Drawing.Point(19, 160);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(174, 41);
             this.buttonDelete.TabIndex = 7;
@@ -194,6 +196,17 @@
             // 
             this.shoppingCartsTableAdapter.ClearBeforeFill = true;
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Location = new System.Drawing.Point(19, 66);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(174, 41);
+            this.buttonAdd.TabIndex = 8;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // ShowAllCartsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,8 +216,13 @@
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.groupBoxCartControls);
             this.Controls.Add(this.dataGridViewCarts);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(622, 359);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(622, 359);
             this.Name = "ShowAllCartsForm";
-            this.Text = "ShowCartsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Заказы клиента";
             this.Load += new System.EventHandler(this.ShowAllCartsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).EndInit();
@@ -236,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn deliveredDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
