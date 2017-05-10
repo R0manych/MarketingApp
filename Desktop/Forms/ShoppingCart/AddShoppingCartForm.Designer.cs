@@ -41,7 +41,8 @@
             this.dataGridCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCart.Location = new System.Drawing.Point(12, 12);
             this.dataGridCart.Name = "dataGridCart";
-            this.dataGridCart.Size = new System.Drawing.Size(549, 296);
+            this.dataGridCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridCart.Size = new System.Drawing.Size(343, 300);
             this.dataGridCart.TabIndex = 0;
             // 
             // buttonAddProduct
@@ -67,7 +68,7 @@
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSave.Location = new System.Drawing.Point(309, 325);
+            this.buttonSave.Location = new System.Drawing.Point(12, 371);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(123, 28);
             this.buttonSave.TabIndex = 3;
@@ -78,7 +79,7 @@
             // buttonClose
             // 
             this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClose.Location = new System.Drawing.Point(438, 325);
+            this.buttonClose.Location = new System.Drawing.Point(232, 371);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(123, 28);
             this.buttonClose.TabIndex = 4;
@@ -90,14 +91,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 373);
+            this.ClientSize = new System.Drawing.Size(366, 400);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.dataGridCart);
             this.Name = "AddShoppingCartForm";
-            this.Text = "AddShoppingCartForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Новый заказ";
             this.Load += new System.EventHandler(this.AddShoppingCartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCart)).EndInit();
             this.ResumeLayout(false);

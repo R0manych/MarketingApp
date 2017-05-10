@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 namespace DataContextModel.ViewModels
 {
     public class CartProductView
-    { 
+    {        
+
+        [Browsable(false)]
         public int Id { get; }
 
         [DisplayName("Наименование")]
@@ -17,6 +19,7 @@ namespace DataContextModel.ViewModels
         [DisplayName("Количество")]
         public int Count { get; set; }
 
+        [Browsable(false)]
         public int CartId { get; set; }
 
         [DisplayName("Цена")]

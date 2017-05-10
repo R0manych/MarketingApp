@@ -101,7 +101,7 @@ namespace BusinessLogic.Services.EntityServices
             };
         }
 
-        public CartProductView GetCartProductViewFromProduct(Product product) => new CartProductView(product.Name, product.Id, 0, product.Price);
+        public CartProductView GetCartProductViewFromProduct(Product product) => new CartProductView(product.Name, 0, 0, product.Price);
 
         public void Update(CartProduct product)
         {

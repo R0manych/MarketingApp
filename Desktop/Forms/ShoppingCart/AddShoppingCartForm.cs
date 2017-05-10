@@ -44,11 +44,10 @@ namespace Desktop.Forms.ShoppingCart
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
-        {
-            _cartProductService.SaveOrUpdate(_bindingListCart.ToList<CartProductView>());  
+        {  
             try
             {
-                _cartService.Add(_shoppingCart);
+                _cartProductService.SaveOrUpdate(_bindingListCart.ToList<CartProductView>());
                 MessageBox.Show("Покупки добавлены");
                 Close();
             }
@@ -67,6 +66,7 @@ namespace Desktop.Forms.ShoppingCart
                 Delivered = false,
                 Number = "1"    
             };
+            _cartService.Add(_shoppingCart);
             comboBoxProduct.DataSource = _productService.GetAllNames().ToArray();
             dataGridCart.DataSource = _bindingListCart;
         }
@@ -74,7 +74,9 @@ namespace Desktop.Forms.ShoppingCart
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
             var product = _productService.GetByName(comboBoxProduct.SelectedValue.ToString());
-            _bindingListCart.Add(_cartProductService.GetCartProductViewFromProduct(product));
+            var cartProductView = _cartProductService.GetCartProductViewFromProduct(product);
+            cartProductView.CartId = _shoppingCart.Id;
+            _bindingListCart.Add(cartProductView);
         }
     }
 }

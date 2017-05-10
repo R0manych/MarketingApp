@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.treeViewClients = new System.Windows.Forms.TreeView();
+            this.contextMenuClientControls = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.новыйЗаказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.историяЗаказовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxClientControls = new System.Windows.Forms.GroupBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
@@ -38,15 +45,8 @@
             this.buttonNewOrder = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.contextMenuClientControls = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.новыйЗаказToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.историяЗаказовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBoxClientControls.SuspendLayout();
             this.contextMenuClientControls.SuspendLayout();
+            this.groupBoxClientControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeViewClients
@@ -58,6 +58,60 @@
             this.treeViewClients.Size = new System.Drawing.Size(666, 458);
             this.treeViewClients.TabIndex = 0;
             this.treeViewClients.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeViewClients_AfterExpand);
+            // 
+            // contextMenuClientControls
+            // 
+            this.contextMenuClientControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.открытьToolStripMenuItem,
+            this.добавитьToolStripMenuItem,
+            this.редактироватьToolStripMenuItem,
+            this.новыйЗаказToolStripMenuItem,
+            this.историяЗаказовToolStripMenuItem,
+            this.удалитьToolStripMenuItem});
+            this.contextMenuClientControls.Name = "contextMenuClientControls";
+            this.contextMenuClientControls.Size = new System.Drawing.Size(166, 136);
+            // 
+            // открытьToolStripMenuItem
+            // 
+            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.открытьToolStripMenuItem.Text = "Открыть";
+            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.buttonOpen_Click);
+            // 
+            // добавитьToolStripMenuItem
+            // 
+            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // редактироватьToolStripMenuItem
+            // 
+            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // новыйЗаказToolStripMenuItem
+            // 
+            this.новыйЗаказToolStripMenuItem.Name = "новыйЗаказToolStripMenuItem";
+            this.новыйЗаказToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.новыйЗаказToolStripMenuItem.Text = "Новый заказ";
+            this.новыйЗаказToolStripMenuItem.Click += new System.EventHandler(this.buttonNewOrder_Click);
+            // 
+            // историяЗаказовToolStripMenuItem
+            // 
+            this.историяЗаказовToolStripMenuItem.Name = "историяЗаказовToolStripMenuItem";
+            this.историяЗаказовToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.историяЗаказовToolStripMenuItem.Text = "История заказов";
+            this.историяЗаказовToolStripMenuItem.Click += new System.EventHandler(this.buttonHistory_Click);
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // groupBoxClientControls
             // 
@@ -151,73 +205,20 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // contextMenuClientControls
-            // 
-            this.contextMenuClientControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.открытьToolStripMenuItem,
-            this.добавитьToolStripMenuItem,
-            this.редактироватьToolStripMenuItem,
-            this.новыйЗаказToolStripMenuItem,
-            this.историяЗаказовToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
-            this.contextMenuClientControls.Name = "contextMenuClientControls";
-            this.contextMenuClientControls.Size = new System.Drawing.Size(166, 136);
-            // 
-            // открытьToolStripMenuItem
-            // 
-            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.открытьToolStripMenuItem.Text = "Открыть";
-            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.buttonOpen_Click);
-            // 
-            // добавитьToolStripMenuItem
-            // 
-            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.добавитьToolStripMenuItem.Text = "Добавить";
-            this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // редактироватьToolStripMenuItem
-            // 
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
-            this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // новыйЗаказToolStripMenuItem
-            // 
-            this.новыйЗаказToolStripMenuItem.Name = "новыйЗаказToolStripMenuItem";
-            this.новыйЗаказToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.новыйЗаказToolStripMenuItem.Text = "Новый заказ";
-            this.новыйЗаказToolStripMenuItem.Click += new System.EventHandler(this.buttonNewOrder_Click);
-            // 
-            // историяЗаказовToolStripMenuItem
-            // 
-            this.историяЗаказовToolStripMenuItem.Name = "историяЗаказовToolStripMenuItem";
-            this.историяЗаказовToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.историяЗаказовToolStripMenuItem.Text = "История заказов";
-            this.историяЗаказовToolStripMenuItem.Click += new System.EventHandler(this.buttonHistory_Click);
-            // 
-            // удалитьToolStripMenuItem
-            // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
-            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(922, 506);
+            this.ClientSize = new System.Drawing.Size(922, 484);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.groupBoxClientControls);
             this.Controls.Add(this.treeViewClients);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.groupBoxClientControls.ResumeLayout(false);
             this.contextMenuClientControls.ResumeLayout(false);
+            this.groupBoxClientControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
