@@ -79,7 +79,7 @@
             this.MinimumSize = new System.Drawing.Size(382, 135);
             this.Name = "AcceptForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Удалить";
+            this.Text = "Подтвердите действие";
             this.ResumeLayout(false);
             this.PerformLayout();
 
