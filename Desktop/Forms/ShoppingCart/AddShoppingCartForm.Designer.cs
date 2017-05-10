@@ -48,7 +48,7 @@
             // buttonAddProduct
             // 
             this.buttonAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAddProduct.Location = new System.Drawing.Point(167, 325);
+            this.buttonAddProduct.Location = new System.Drawing.Point(231, 324);
             this.buttonAddProduct.Name = "buttonAddProduct";
             this.buttonAddProduct.Size = new System.Drawing.Size(123, 28);
             this.buttonAddProduct.TabIndex = 1;
@@ -62,7 +62,7 @@
             this.comboBoxProduct.FormattingEnabled = true;
             this.comboBoxProduct.Location = new System.Drawing.Point(12, 324);
             this.comboBoxProduct.Name = "comboBoxProduct";
-            this.comboBoxProduct.Size = new System.Drawing.Size(149, 28);
+            this.comboBoxProduct.Size = new System.Drawing.Size(213, 28);
             this.comboBoxProduct.TabIndex = 2;
             // 
             // buttonSave
