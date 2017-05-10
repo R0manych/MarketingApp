@@ -40,7 +40,10 @@ namespace Desktop.Forms.ShoppingCart
             var acceptForm = new AcceptForm("Закрыть без сохранения изменений?");
             acceptForm.ShowDialog();
             if (acceptForm.Accepted)
+            {
+                _cartService.Delete(_shoppingCart);
                 Close();
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

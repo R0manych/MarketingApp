@@ -39,6 +39,8 @@ namespace Desktop.Forms.ShoppingCart
 
         private void ViewShoppingCartForm_Load(object sender, EventArgs e)
         {
+            var _shoppingCart = _cartService.GetById(_cartId);
+            this.Text += " " + _shoppingCart.Number.ToString();
             Reload();
         }
 
@@ -52,37 +54,6 @@ namespace Desktop.Forms.ShoppingCart
         private void Reload()
         {
             dataGridCart.DataSource = _cartProductService.GetByCartId(_cartId);
-        }
-
-        private void SaveData()
-        {
-            var cart = _cartService.GetById(_cartId);
-            if (checkBoxDelivered.Checked != cart.Delivered)
-            {
-                cart.Delivered = checkBoxDelivered.Checked;
-                _cartService.Update(cart);
-            }
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            SaveData();
-        }
-
-        private void ViewShoppingCartForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (_isModified)
-            {
-                var acceptForm = new AcceptForm("Закрыть без сохранения изменений?");
-                acceptForm.ShowDialog();
-                e.Cancel = !acceptForm.Accepted;
-            }
-        }
-
-        private void checkBoxDelivered_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!_isModified)
-                _isModified = true;
-        }
+        }   
     }
 }

@@ -104,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(373, 448);
+            this.ClientSize = new System.Drawing.Size(372, 448);
             this.Controls.Add(this.checkBoxDelivered);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSave);
@@ -112,9 +112,9 @@
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.dataGridCart);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(391, 487);
+            this.MaximumSize = new System.Drawing.Size(390, 487);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(391, 487);
+            this.MinimumSize = new System.Drawing.Size(390, 487);
             this.Name = "EditShoppingCartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заказ №";

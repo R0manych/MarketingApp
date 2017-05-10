@@ -40,12 +40,12 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.groupBoxCartControls = new System.Windows.Forms.GroupBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.toolStripComboBoxClient = new System.Windows.Forms.ToolStripComboBox();
             this.fillByClientIdToolStrip = new System.Windows.Forms.ToolStrip();
             this.shoppingCartsTableAdapter = new Desktop.ShoppingCartDataSetTableAdapters.ShoppingCartsTableAdapter();
-            this.buttonAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCarts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoppingCartsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shoppingCartDataSet)).BeginInit();
@@ -153,6 +153,17 @@
             this.groupBoxCartControls.TabStop = false;
             this.groupBoxCartControls.Text = "Заказы";
             // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Location = new System.Drawing.Point(19, 66);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(174, 41);
+            this.buttonAdd.TabIndex = 8;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
             // buttonEdit
             // 
             this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -195,17 +206,6 @@
             // shoppingCartsTableAdapter
             // 
             this.shoppingCartsTableAdapter.ClearBeforeFill = true;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd.Location = new System.Drawing.Point(19, 66);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(174, 41);
-            this.buttonAdd.TabIndex = 8;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // ShowAllCartsForm
             // 

@@ -38,9 +38,11 @@
             // 
             // dataGridCart
             // 
+            this.dataGridCart.AllowUserToAddRows = false;
             this.dataGridCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCart.Location = new System.Drawing.Point(12, 12);
             this.dataGridCart.Name = "dataGridCart";
+            this.dataGridCart.ReadOnly = true;
             this.dataGridCart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridCart.Size = new System.Drawing.Size(343, 300);
             this.dataGridCart.TabIndex = 0;
@@ -91,16 +93,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 407);
+            this.ClientSize = new System.Drawing.Size(372, 407);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.comboBoxProduct);
             this.Controls.Add(this.buttonAddProduct);
             this.Controls.Add(this.dataGridCart);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(384, 446);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(384, 446);
             this.Name = "AddShoppingCartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новый заказ";
