@@ -72,14 +72,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CartProductsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CartsDataSet.cs">
-      <DependentUpon>CartsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CartsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CartsDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Client\AddClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,17 +189,6 @@
     </None>
     <None Include="CartProductsDataSet.xss">
       <DependentUpon>CartProductsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CartsDataSet.xsc">
-      <DependentUpon>CartsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CartsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CartsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CartsDataSet.xss">
-      <DependentUpon>CartsDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="ProductsDataSet.xsc">
