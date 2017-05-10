@@ -13,6 +13,7 @@ using Desktop.FormUtils;
 using Desktop.Forms.Client;
 using Desktop.Forms.ShoppingCart;
 using DataContextModel.Repositories;
+using Desktop.Forms.Common;
 
 namespace Desktop.Forms
 {
@@ -65,12 +66,17 @@ namespace Desktop.Forms
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            var parentNode = treeViewClients.SelectedNode.Parent;
-            _clientService.Delete(_clientService.GetByName(treeViewClients.SelectedNode.Text));
-            if (parentNode != null)
-                MainFormUtils.Reload(parentNode);
-            else
-                MainFormUtils.SetRoot(treeViewClients, _clientService.GetRootClients());
+            var acceptForm = new AcceptForm("Удалить клиента?");
+            acceptForm.ShowDialog();
+            if (acceptForm.Accepted)
+            {
+                var parentNode = treeViewClients.SelectedNode.Parent;
+                _clientService.Delete(_clientService.GetByName(treeViewClients.SelectedNode.Text));
+                if (parentNode != null)
+                    MainFormUtils.Reload(parentNode);
+                else
+                    MainFormUtils.SetRoot(treeViewClients, _clientService.GetRootClients());
+            }
         }
 
         private void buttonNewOrder_Click(object sender, EventArgs e)
