@@ -215,7 +215,7 @@
             this.Controls.Add(this.treeViewClients);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Главное окно";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.contextMenuClientControls.ResumeLayout(false);
             this.groupBoxClientControls.ResumeLayout(false);
