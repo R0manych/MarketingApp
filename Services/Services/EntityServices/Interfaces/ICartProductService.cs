@@ -17,6 +17,8 @@ namespace BusinessLogic.Services.EntityServices.Interfaces
         void SaveOrUpdate(List<CartProductView> products);
 
         CartProductView GetCartProductViewFromProduct(Product product);
+
+        List<CartProductView> ConvertToView(List<CartProduct> products);
     }
 
 

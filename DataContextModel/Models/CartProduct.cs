@@ -16,7 +16,7 @@ namespace DataContextModel.Models
 
         public int Count { get; set; }
 
-        public virtual Product Product { get; set; }
+        public Product Product { get; set; }
 
         public virtual ShoppingCart Cart { get; set; }
     }

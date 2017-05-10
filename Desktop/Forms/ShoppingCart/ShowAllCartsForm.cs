@@ -57,7 +57,8 @@ namespace Desktop.Forms.ShoppingCart
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            var editForm = new EditShoppingCartForm(_clientId);
+            var cartId = Convert.ToInt32(dataGridViewCarts.SelectedRows[0].Cells[0].Value);
+            var editForm = new EditShoppingCartForm(cartId);
             editForm.ShowDialog();
             ReloadForm();
         }

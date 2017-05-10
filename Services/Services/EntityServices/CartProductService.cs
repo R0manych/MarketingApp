@@ -60,10 +60,14 @@ namespace BusinessLogic.Services.EntityServices
         {
             var products = _cartProducts.GetAll().Where(p => p.CartId == cartId);
             var productsViewModel = new List<CartProductView>();
-            foreach (var product in products)
+            foreach (var cartProduct in products)
             {
-                productsViewModel.Add(new CartProductView(product.Product.Name, product.Id, cartId, Math.Round(product.Product.Price, 2))
-                { Count = product.Count });
+                using (var _productRep = new ProductRepository())
+                {
+                    var product = _productRep.GetById(cartProduct.ProductId);
+                    productsViewModel.Add(new CartProductView(product.Name, cartProduct.Id, cartId, Math.Round(product.Price, 2))
+                    { Count = cartProduct.Count });
+                }
             }
             return productsViewModel;
         }
@@ -100,6 +104,18 @@ namespace BusinessLogic.Services.EntityServices
                 CartId = productView.CartId
             };
         }
+
+        public List<CartProductView> ConvertToView(List<CartProduct> products)
+        {
+            var list = new List<CartProductView>();
+            foreach (var product in products)
+            {
+                list.Add(ConvertToView(product));
+            }
+            return list;
+        }
+
+        private CartProductView ConvertToView(CartProduct product) => new CartProductView(product.Product.Name, product.Id, product.CartId, product.Product.Price);
 
         public CartProductView GetCartProductViewFromProduct(Product product) => new CartProductView(product.Name, 0, 0, product.Price);
 
