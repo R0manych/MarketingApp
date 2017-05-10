@@ -67,11 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CartDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CartDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="CartProductsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -189,17 +184,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CartDataSet.xsc">
-      <DependentUpon>CartDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CartDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CartDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CartDataSet.xss">
-      <DependentUpon>CartDataSet.xsd</DependentUpon>
-    </None>
     <None Include="CartProductsDataSet.xsc">
       <DependentUpon>CartProductsDataSet.xsd</DependentUpon>
     </None>
