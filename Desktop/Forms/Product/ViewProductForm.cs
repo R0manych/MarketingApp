@@ -61,5 +61,17 @@ namespace Desktop.Forms.Product
             if (!_isModified)
                 _isModified = true;
         }
+
+        private void dataGrid_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (!_isModified)
+                _isModified = true;
+        }
+
+        private void dataGrid_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (!_isModified)
+                _isModified = true;
+        }
     }
 }

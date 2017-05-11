@@ -45,6 +45,7 @@
             this.buttonNewOrder = new System.Windows.Forms.Button();
             this.buttonOpen = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonProducts = new System.Windows.Forms.Button();
             this.contextMenuClientControls.SuspendLayout();
             this.groupBoxClientControls.SuspendLayout();
             this.SuspendLayout();
@@ -205,11 +206,23 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // buttonProducts
+            // 
+            this.buttonProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonProducts.Location = new System.Drawing.Point(715, 338);
+            this.buttonProducts.Name = "buttonProducts";
+            this.buttonProducts.Size = new System.Drawing.Size(174, 41);
+            this.buttonProducts.TabIndex = 9;
+            this.buttonProducts.Text = "Товары";
+            this.buttonProducts.UseVisualStyleBackColor = true;
+            this.buttonProducts.Click += new System.EventHandler(this.buttonProducts_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 484);
+            this.Controls.Add(this.buttonProducts);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.groupBoxClientControls);
             this.Controls.Add(this.treeViewClients);
@@ -241,5 +254,6 @@
         private System.Windows.Forms.ToolStripMenuItem новыйЗаказToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem историяЗаказовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.Button buttonProducts;
     }
 }

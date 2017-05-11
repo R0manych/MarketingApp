@@ -58,6 +58,8 @@
             this.dataGrid.Size = new System.Drawing.Size(746, 369);
             this.dataGrid.TabIndex = 0;
             this.dataGrid.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGrid_CellBeginEdit);
+            this.dataGrid.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGrid_RowsAdded);
+            this.dataGrid.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGrid_RowsRemoved);
             // 
             // nameDataGridViewTextBoxColumn
             // 

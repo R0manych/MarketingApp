@@ -14,6 +14,7 @@ using Desktop.Forms.Client;
 using Desktop.Forms.ShoppingCart;
 using DataContextModel.Repositories;
 using Desktop.Forms.Common;
+using Desktop.Forms.Product;
 
 namespace Desktop.Forms
 {
@@ -89,6 +90,12 @@ namespace Desktop.Forms
         {
             var allShoppingCartsForm = new ShowAllCartsForm(_clientService.GetByName(treeViewClients.SelectedNode.Text).Id);
             allShoppingCartsForm.Show();
+        }
+
+        private void buttonProducts_Click(object sender, EventArgs e)
+        {
+            var viewProductForm = new ViewProductForm();
+            viewProductForm.Show();
         }
     }
 }
